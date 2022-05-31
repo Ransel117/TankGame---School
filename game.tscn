@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://terrain.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Players/player1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game.gd" type="Script" id=3]
+[ext_resource path="res://Control.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Players/player2.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -4.69125, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.75, 1 )
+colors = PoolColorArray( 0, 0, 1, 1, 0, 0.607843, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.75, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0.392157, 1, 0.964706, 0.964706, 0.964706, 0 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Terrain" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 1, 1 )
+
+[node name="Player1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 136, 408 )
+collision_layer = 3
+collision_mask = 3
+input_pickable = true
+
+[node name="Player2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1920, 408 )
+collision_layer = 12
+collision_mask = 12
+
+[node name="Line2D1" type="Line2D" parent="."]
+points = PoolVector2Array( 776, 440 )
+width = 8.0
+width_curve = SubResource( 1 )
+default_color = Color( 0, 0, 1, 1 )
+gradient = SubResource( 2 )
+joint_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="."]
+points = PoolVector2Array( 776, 440 )
+width = 8.0
+width_curve = SubResource( 1 )
+default_color = Color( 1, 0, 0, 1 )
+gradient = SubResource( 3 )
+joint_mode = 2
+end_cap_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="UI" parent="." instance=ExtResource( 4 )]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="ShootTimer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 15.0
+
+[connection signal="gui_input" from="UI" to="Player1" method="_on_UI_gui_input"]
+[connection signal="gui_input" from="UI" to="Player2" method="_on_UI_gui_input"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_Timer_timeout"]

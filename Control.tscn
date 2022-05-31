@@ -1,0 +1,1032 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://p1weapon.gd" type="Script" id=1]
+[ext_resource path="res://buttongroup.tres" type="ButtonGroup" id=2]
+[ext_resource path="res://buttongroup2.tres" type="ButtonGroup" id=3]
+[ext_resource path="res://theme/_mytheme.tres" type="Theme" id=4]
+[ext_resource path="res://p2weapon.gd" type="Script" id=5]
+[ext_resource path="res://theme/AsepriteFont.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Menus.gd" type="Script" id=7]
+[ext_resource path="res://Players/Sprites/Bullet.png" type="Texture" id=8]
+[ext_resource path="res://Players/Sprites/Bullet3.png" type="Texture" id=9]
+[ext_resource path="res://Players/Sprites/Bullet5.png" type="Texture" id=10]
+[ext_resource path="res://Players/Sprites/Bullet2.png" type="Texture" id=11]
+[ext_resource path="res://Players/Sprites/Bullet4.png" type="Texture" id=12]
+[ext_resource path="res://Players/Sprites/Bullet6.png" type="Texture" id=13]
+[ext_resource path="res://Players/Sprites/PlayerTankFull.png" type="Texture" id=14]
+[ext_resource path="res://Players/Sprites/EnemyTankFull.png" type="Texture" id=15]
+
+[sub_resource type="DynamicFont" id=19]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = -8
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = 8
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = -8
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 24
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+theme = ExtResource( 4 )
+
+[node name="Menus" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Menus"]
+modulate = Color( 0.4, 0.4, 0.6, 1 )
+margin_right = 1024.0
+margin_bottom = 824.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="Control" parent="Menus"]
+margin_left = 288.0
+margin_top = 248.0
+margin_right = 736.0
+margin_bottom = 536.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Menus/Main"]
+margin_right = 448.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="Menus/Main/Panel"]
+margin_left = 168.0
+margin_top = 112.0
+margin_right = 280.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 19 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" type="Button" parent="Menus/Main/Panel"]
+margin_left = 168.0
+margin_top = 168.0
+margin_right = 280.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 19 )
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="Menus/Main/Panel"]
+margin_left = 168.0
+margin_top = 224.0
+margin_right = 280.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 19 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menus/Main"]
+margin_left = 96.0
+margin_top = 24.0
+margin_right = 352.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 16 )
+text = "TankGame"
+align = 1
+
+[node name="Settings" type="Control" parent="Menus"]
+visible = false
+margin_left = 288.0
+margin_top = 248.0
+margin_right = 736.0
+margin_bottom = 536.0
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="Menus/Settings"]
+margin_right = 448.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioButton" type="Button" parent="Menus/Settings/Panel"]
+margin_left = 104.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 19 )
+text = "Audio"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoButton" type="Button" parent="Menus/Settings/Panel"]
+margin_left = 232.0
+margin_top = 72.0
+margin_right = 344.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 19 )
+text = "Video"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlsButton" type="Button" parent="Menus/Settings/Panel"]
+margin_left = 104.0
+margin_top = 152.0
+margin_right = 216.0
+margin_bottom = 184.0
+custom_fonts/font = SubResource( 19 )
+text = "Controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiscButton" type="Button" parent="Menus/Settings/Panel"]
+margin_left = 232.0
+margin_top = 152.0
+margin_right = 344.0
+margin_bottom = 184.0
+custom_fonts/font = SubResource( 19 )
+text = "Misc"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="Menus/Settings/Panel"]
+margin_left = 168.0
+margin_top = 224.0
+margin_right = 280.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 19 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="Control" parent="Menus"]
+visible = false
+margin_left = 288.0
+margin_top = 248.0
+margin_right = 736.0
+margin_bottom = 536.0
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="Menus/Audio"]
+margin_right = 448.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicVolume" type="Control" parent="Menus/Audio/Panel"]
+margin_left = 128.0
+margin_top = 40.0
+margin_right = 320.0
+margin_bottom = 88.0
+mouse_filter = 1
+
+[node name="MusicSlider" type="HSlider" parent="Menus/Audio/Panel/MusicVolume"]
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+value = 100.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="Menus/Audio/Panel/MusicVolume"]
+margin_left = 64.0
+margin_right = 128.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 19 )
+text = "Music"
+align = 1
+valign = 2
+
+[node name="SFXVolume" type="Control" parent="Menus/Audio/Panel"]
+margin_left = 128.0
+margin_top = 112.0
+margin_right = 320.0
+margin_bottom = 160.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXSlider" type="HSlider" parent="Menus/Audio/Panel/SFXVolume"]
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+value = 100.0
+rounded = true
+tick_count = 10
+
+[node name="Label" type="Label" parent="Menus/Audio/Panel/SFXVolume"]
+margin_left = 64.0
+margin_right = 128.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 19 )
+text = "SFX"
+align = 1
+valign = 2
+
+[node name="BackButton" type="Button" parent="Menus/Audio/Panel"]
+margin_left = 168.0
+margin_top = 224.0
+margin_right = 280.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 19 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="Control" parent="Menus"]
+visible = false
+margin_left = 288.0
+margin_top = 248.0
+margin_right = 736.0
+margin_bottom = 536.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Menus/Controls"]
+margin_right = 448.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="Menus/Controls/Panel"]
+margin_left = 168.0
+margin_top = 224.0
+margin_right = 280.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 19 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menus/Controls/Panel"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 208.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 22 )
+text = "Player 1"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Menus/Controls/Panel"]
+margin_left = 240.0
+margin_top = 24.0
+margin_right = 368.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 22 )
+text = "Player 2"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="Menus/Controls/Panel"]
+margin_left = 80.0
+margin_top = 64.0
+margin_right = 208.0
+margin_bottom = 151.0
+text = "Power Up - W
+Power Down - S
+Left - A
+Right - D
+Aim - Mouse"
+align = 1
+
+[node name="Label4" type="Label" parent="Menus/Controls/Panel"]
+margin_left = 240.0
+margin_top = 64.0
+margin_right = 368.0
+margin_bottom = 151.0
+text = "Power Up - Up Arrow
+Power Down - Down Arrow
+Left - Left Arrow
+Right - Right Arrow
+Aim - Mouse"
+align = 1
+
+[node name="Video" type="Control" parent="Menus"]
+visible = false
+margin_left = 288.0
+margin_top = 248.0
+margin_right = 736.0
+margin_bottom = 536.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Menus/Video"]
+margin_right = 448.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="Menus/Video/Panel"]
+margin_left = 168.0
+margin_top = 224.0
+margin_right = 280.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 19 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Misc" type="Control" parent="Menus"]
+visible = false
+margin_left = 288.0
+margin_top = 248.0
+margin_right = 736.0
+margin_bottom = 536.0
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="Menus/Misc"]
+margin_right = 448.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="Menus/Misc/Panel"]
+margin_left = 168.0
+margin_top = 224.0
+margin_right = 280.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 19 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Win" type="Control" parent="Menus"]
+visible = false
+margin_left = 288.0
+margin_top = 248.0
+margin_right = 736.0
+margin_bottom = 536.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Menus/Win"]
+margin_right = 448.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuButton" type="Button" parent="Menus/Win/Panel"]
+margin_left = 168.0
+margin_top = 168.0
+margin_right = 280.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 19 )
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="Menus/Win/Panel"]
+margin_left = 168.0
+margin_top = 224.0
+margin_right = 280.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 19 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menus/Win"]
+margin_left = 96.0
+margin_top = 24.0
+margin_right = 352.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 19 )
+text = "TankGame"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Menus/Win"]
+margin_left = 160.0
+margin_top = 88.0
+margin_right = 288.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 19 )
+text = "Player"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="Control" parent="."]
+visible = false
+margin_top = 600.0
+margin_right = 1024.0
+margin_bottom = 824.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1" type="Control" parent="Inventory"]
+margin_right = 512.0
+margin_bottom = 224.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Inventory/Player1"]
+margin_right = 512.0
+margin_bottom = 224.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Inventory/Player1/Panel"]
+modulate = Color( 0.4, 0.4, 0.6, 1 )
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 496.0
+margin_bottom = 208.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weaponctrl" type="Control" parent="Inventory/Player1"]
+margin_left = 168.0
+margin_top = 32.0
+margin_right = 488.0
+margin_bottom = 192.0
+mouse_filter = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group = ExtResource( 2 )
+
+[node name="WeaponPanel" type="Panel" parent="Inventory/Player1/Weaponctrl"]
+self_modulate = Color( 0.8, 0.8, 1, 1 )
+margin_right = 192.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Inventory/Player1/Weaponctrl/WeaponPanel"]
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 56.0
+margin_bottom = 64.0
+focus_mode = 0
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 0
+group = ExtResource( 2 )
+icon = ExtResource( 8 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Inventory/Player1/Weaponctrl/WeaponPanel"]
+margin_left = 80.0
+margin_top = 32.0
+margin_right = 112.0
+margin_bottom = 64.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 2 )
+icon = ExtResource( 11 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Inventory/Player1/Weaponctrl/WeaponPanel"]
+margin_left = 136.0
+margin_top = 32.0
+margin_right = 168.0
+margin_bottom = 64.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 2 )
+icon = ExtResource( 9 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Inventory/Player1/Weaponctrl/WeaponPanel"]
+margin_left = 24.0
+margin_top = 96.0
+margin_right = 56.0
+margin_bottom = 128.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 2 )
+icon = ExtResource( 12 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="Inventory/Player1/Weaponctrl/WeaponPanel"]
+anchor_left = 0.417
+anchor_top = 0.6
+anchor_right = 0.583
+anchor_bottom = 0.8
+margin_left = -0.064003
+margin_right = 0.0639954
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 2 )
+icon = ExtResource( 10 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="Inventory/Player1/Weaponctrl/WeaponPanel"]
+margin_left = 136.0
+margin_top = 96.0
+margin_right = 168.0
+margin_bottom = 128.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 2 )
+icon = ExtResource( 13 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActionPanel" type="Panel" parent="Inventory/Player1/Weaponctrl"]
+self_modulate = Color( 0.8, 0.8, 1, 1 )
+margin_left = 208.0
+margin_right = 320.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Inventory/Player1/Weaponctrl/ActionPanel"]
+margin_left = 24.0
+margin_top = 96.0
+margin_right = 90.0
+margin_bottom = 128.0
+focus_mode = 0
+custom_fonts/font = SubResource( 20 )
+enabled_focus_mode = 0
+text = "Shoot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fueltxt" type="Label" parent="Inventory/Player1/Weaponctrl/ActionPanel"]
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 88.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 17 )
+text = "Fuel:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fuelvalue" type="Label" parent="Inventory/Player1/Weaponctrl/ActionPanel"]
+margin_left = 24.0
+margin_top = 64.0
+margin_right = 88.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 18 )
+text = "200"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthPanel" type="Panel" parent="Inventory/Player1"]
+self_modulate = Color( 0.8, 0.8, 1, 1 )
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 152.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/Player1/HealthPanel"]
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 104.0
+margin_bottom = 80.0
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Healthbar" type="ProgressBar" parent="Inventory/Player1/HealthPanel"]
+margin_left = 24.0
+margin_top = 112.0
+margin_right = 104.0
+margin_bottom = 136.0
+max_value = 200.0
+step = 1.0
+value = 200.0
+rounded = true
+percent_visible = false
+
+[node name="Healthtxt" type="Label" parent="Inventory/Player1/HealthPanel"]
+margin_left = 24.0
+margin_top = 80.0
+margin_right = 104.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 17 )
+text = "Health:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Healthvalue" type="Label" parent="Inventory/Player1/HealthPanel"]
+margin_left = 32.0
+margin_top = 112.0
+margin_right = 96.0
+margin_bottom = 130.0
+custom_fonts/font = SubResource( 18 )
+text = "200/200"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2" type="Control" parent="Inventory"]
+margin_left = 512.0
+margin_right = 1024.0
+margin_bottom = 224.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Inventory/Player2"]
+margin_right = 512.0
+margin_bottom = 224.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Inventory/Player2/Panel"]
+modulate = Color( 0.4, 0.4, 0.6, 1 )
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 496.0
+margin_bottom = 208.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weaponctrl" type="Control" parent="Inventory/Player2"]
+margin_left = 168.0
+margin_top = 32.0
+margin_right = 488.0
+margin_bottom = 192.0
+mouse_filter = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group = ExtResource( 3 )
+
+[node name="WeaponPanel" type="Panel" parent="Inventory/Player2/Weaponctrl"]
+self_modulate = Color( 0.8, 0.8, 1, 1 )
+margin_right = 192.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Inventory/Player2/Weaponctrl/WeaponPanel"]
+margin_left = 24.0
+margin_top = 32.0001
+margin_right = 56.0
+margin_bottom = 64.0001
+focus_mode = 0
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 0
+group = ExtResource( 3 )
+icon = ExtResource( 8 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Inventory/Player2/Weaponctrl/WeaponPanel"]
+margin_left = 80.0
+margin_top = 32.0
+margin_right = 112.0
+margin_bottom = 64.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 3 )
+icon = ExtResource( 11 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Inventory/Player2/Weaponctrl/WeaponPanel"]
+margin_left = 136.0
+margin_top = 32.0
+margin_right = 168.0
+margin_bottom = 64.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 3 )
+icon = ExtResource( 9 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Inventory/Player2/Weaponctrl/WeaponPanel"]
+margin_left = 24.0
+margin_top = 96.0
+margin_right = 56.0
+margin_bottom = 128.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 3 )
+icon = ExtResource( 12 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="Inventory/Player2/Weaponctrl/WeaponPanel"]
+margin_left = 80.0
+margin_top = 96.0
+margin_right = 112.0
+margin_bottom = 128.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 3 )
+icon = ExtResource( 10 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="Inventory/Player2/Weaponctrl/WeaponPanel"]
+margin_left = 136.0
+margin_top = 96.0
+margin_right = 168.0
+margin_bottom = 128.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+group = ExtResource( 3 )
+icon = ExtResource( 13 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActionPanel" type="Panel" parent="Inventory/Player2/Weaponctrl"]
+self_modulate = Color( 0.8, 0.8, 1, 1 )
+margin_left = 208.0
+margin_right = 320.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Inventory/Player2/Weaponctrl/ActionPanel"]
+margin_left = 24.0
+margin_top = 96.0
+margin_right = 88.0
+margin_bottom = 128.0
+focus_mode = 0
+custom_fonts/font = SubResource( 20 )
+enabled_focus_mode = 0
+text = "Shoot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fueltxt" type="Label" parent="Inventory/Player2/Weaponctrl/ActionPanel"]
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 88.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 17 )
+text = "Fuel:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fuelvalue" type="Label" parent="Inventory/Player2/Weaponctrl/ActionPanel"]
+margin_left = 24.0
+margin_top = 64.0
+margin_right = 88.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 18 )
+text = "200"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthPanel" type="Panel" parent="Inventory/Player2"]
+self_modulate = Color( 0.8, 0.8, 1, 1 )
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 152.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/Player2/HealthPanel"]
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 104.0
+margin_bottom = 80.0
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Healthbar" type="ProgressBar" parent="Inventory/Player2/HealthPanel"]
+margin_left = 24.0
+margin_top = 112.0
+margin_right = 104.0
+margin_bottom = 136.0
+max_value = 200.0
+step = 1.0
+value = 200.0
+rounded = true
+percent_visible = false
+
+[node name="Healthtxt" type="Label" parent="Inventory/Player2/HealthPanel"]
+margin_left = 24.0
+margin_top = 80.0
+margin_right = 104.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 17 )
+text = "Health:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Healthvalue" type="Label" parent="Inventory/Player2/HealthPanel"]
+margin_left = 32.0
+margin_top = 112.0
+margin_right = 96.0
+margin_bottom = 130.0
+custom_fonts/font = SubResource( 18 )
+text = "200/200"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Inventory"]
+self_modulate = Color( 0.6, 0.6, 1, 1 )
+margin_left = 480.0
+margin_top = -600.0
+margin_right = 544.0
+margin_bottom = -568.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Inventory/Panel"]
+margin_left = 13.0
+margin_right = 53.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 21 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="Menus/Main/Panel/StartButton" to="Menus" method="_on_StartButton_button_down"]
+[connection signal="button_down" from="Menus/Main/Panel/SettingsButton" to="Menus" method="_on_SettingsButton_button_down"]
+[connection signal="button_down" from="Menus/Main/Panel/QuitButton" to="Menus" method="_on_QuitButton_button_down"]
+[connection signal="button_down" from="Menus/Settings/Panel/AudioButton" to="Menus" method="_on_AudioButton_button_down"]
+[connection signal="button_down" from="Menus/Settings/Panel/VideoButton" to="Menus" method="_on_VideoButton_button_down"]
+[connection signal="button_down" from="Menus/Settings/Panel/ControlsButton" to="Menus" method="_on_ControlsButton_button_down"]
+[connection signal="button_down" from="Menus/Settings/Panel/MiscButton" to="Menus" method="_on_MiscButton_button_down"]
+[connection signal="button_down" from="Menus/Settings/Panel/BackButton" to="Menus" method="_on_BackButton_button_down"]
+[connection signal="button_down" from="Menus/Audio/Panel/BackButton" to="Menus" method="_on_BackButton_button_down"]
+[connection signal="button_down" from="Menus/Controls/Panel/BackButton" to="Menus" method="_on_BackButton_button_down"]
+[connection signal="button_down" from="Menus/Video/Panel/BackButton" to="Menus" method="_on_BackButton_button_down"]
+[connection signal="button_down" from="Menus/Misc/Panel/BackButton" to="Menus" method="_on_BackButton_button_down"]
+[connection signal="button_down" from="Menus/Win/Panel/MainMenuButton" to="Menus" method="_on_MainMenuButton_button_down"]
+[connection signal="button_down" from="Menus/Win/Panel/QuitButton" to="Menus" method="_on_QuitButton_button_down"]
+[connection signal="button_down" from="Inventory/Player1/Weaponctrl/ActionPanel/Button" to="Inventory/Player1/Weaponctrl" method="_on_Button_button_down"]
+[connection signal="button_up" from="Inventory/Player1/Weaponctrl/ActionPanel/Button" to="Inventory/Player1/Weaponctrl" method="_on_Button_button_up"]
+[connection signal="button_down" from="Inventory/Player2/Weaponctrl/ActionPanel/Button" to="Inventory/Player2/Weaponctrl" method="_on_Button_button_down"]
+[connection signal="button_up" from="Inventory/Player2/Weaponctrl/ActionPanel/Button" to="Inventory/Player2/Weaponctrl" method="_on_Button_button_up"]
