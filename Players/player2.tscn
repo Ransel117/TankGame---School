@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Players/player2.gd" type="Script" id=1]
+[ext_resource path="res://addons/CollisionPolygonShape/CollisionPolygonShape2D/CollisionPolygonShape2D.gd" type="Script" id=2]
+[ext_resource path="res://addons/CollisionPolygonShape/CollisionPolygonShape2D/PolygonShape2D/CirclePolygonShape2D.gd" type="Script" id=3]
+[ext_resource path="res://Players/Sprites/EnemyDestroyed.png" type="Texture" id=4]
+[ext_resource path="res://Players/Sprites/EnemyTurret.png" type="Texture" id=5]
+[ext_resource path="res://Players/Sprites/EnemyTank.png" type="Texture" id=6]
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 3 )
+radius = 10.0
+edges = 24
+
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
+script = ExtResource( 1 )
+
+[node name="RotPoint" type="Position2D" parent="."]
+position = Vector2( 0, -16 )
+
+[node name="Cannon" type="Sprite" parent="RotPoint"]
+position = Vector2( 16, 0 )
+scale = Vector2( 0.142857, 0.142857 )
+texture = ExtResource( 5 )
+offset = Vector2( 6, 0 )
+
+[node name="ShootPoint" type="Position2D" parent="RotPoint"]
+position = Vector2( 32, 0 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -5.68434e-14, -8 )
+scale = Vector2( 0.133772, 0.133772 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( -24, -22 )
+scale = Vector2( 0.137492, 0.137492 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="CollisionPolygonShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, -8 )
+scale = Vector2( 1.5, 1.5 )
+polygon = PoolVector2Array( 10, 0, 9.65926, 2.58819, 8.66025, 5, 7.07107, 7.07107, 5, 8.66025, 2.58819, 9.65926, 6.12303e-16, 10, -2.58819, 9.65926, -5, 8.66025, -7.07107, 7.07107, -8.66025, 5, -9.65926, 2.58819, -10, 1.22461e-15, -9.65926, -2.58819, -8.66025, -5, -7.07107, -7.07107, -5, -8.66025, -2.58819, -9.65926, -1.83691e-15, -10, 2.58819, -9.65926, 5, -8.66025, 7.07107, -7.07107, 8.66025, -5, 9.65926, -2.58819 )
+script = ExtResource( 2 )
+shape = SubResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 0, -8 )
